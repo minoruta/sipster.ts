@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sipster.ts check static properties 1`] = `
+Object {
+  "full": "2.7.1",
+  "major": 2,
+  "minor": 7,
+  "numeric": 34013440,
+  "rev": 1,
+  "suffix": "",
+}
+`;
+
+exports[`sipster.ts create a Sipster 1`] = `
+Object {
+  "EpConfig": Object {
+    "LogConfig": Object {
+      "consoleLevel": 6,
+      "decor": 25328,
+      "fileFlags": 0,
+      "filename": "",
+      "level": 6,
+      "msgLogging": 1,
+    },
+    "MediaConfig": Object {
+      "audioFramePtime": 20,
+      "channelCount": 1,
+      "clockRate": 16000,
+      "ecOptions": 0,
+      "ecTailLen": 200,
+      "hasIoqueue": true,
+      "ilbcMode": 30,
+      "jbInit": -1,
+      "jbMax": -1,
+      "jbMaxPre": -1,
+      "jbMinPre": -1,
+      "maxMediaPorts": 254,
+      "noVad": false,
+      "ptime": 0,
+      "quality": 8,
+      "rxDropPct": 0,
+      "sndAutoCloseTime": 1,
+      "sndClockRate": 0,
+      "sndPlayLatency": 140,
+      "sndRecLatency": 100,
+      "threadCnt": 1,
+      "txDropPct": 0,
+      "vidPreviewEnableNative": true,
+    },
+    "UaConfig": Object {
+      "mainThreadOnly": false,
+      "maxCalls": 4,
+      "mwiUnsolicitedEnabled": true,
+      "nameserver": Array [],
+      "natTypeInSdp": 1,
+      "stunIgnoreFailure": true,
+      "stunServer": Array [],
+      "stunTryIpv6": false,
+      "threadCnt": 1,
+      "userAgent": "",
+    },
+  },
+}
+`;
+
+exports[`sipster.ts create a Sipster 2`] = `1`;
+
+exports[`sipster.ts create a Sipster 3`] = `254`;
+
+exports[`sipster.ts create a Sipster 4`] = `"init"`;
+
+exports[`sipster.ts set up a SIP account, we need at least one 1`] = `
+Object {
+  "regExpiresSec": -1,
+  "regIsActive": false,
+  "regIsConfigured": false,
+  "uri": "sip:192.168.100.10",
+}
+`;
+
+exports[`sipster.ts set up a SIP account, we need at least one 2`] = `true`;
+
+exports[`sipster.ts set up a SIP account, we need at least one 3`] = `true`;
+
+exports[`sipster.ts set up a transport to listen for incoming connections, defaults to UDP 1`] = `
+Object {
+  "flags": 4,
+  "info": undefined,
+  "localAddress": "0.0.0.0:5060",
+  "localName": undefined,
+  "type": "UDP",
+  "usageCount": 1,
+}
+`;
+
+exports[`sipster.ts set up a transport to listen for incoming connections, defaults to UDP 2`] = `true`;
+
+exports[`sipster.ts wait for any events 1`] = `"running"`;
+
+exports[`sipster.ts wait for any events 2`] = `
+Object {
+  "call": 0,
+  "registered": 0,
+  "registering": 0,
+  "state": 0,
+  "unregistered": 0,
+  "unregistering": 0,
+}
+`;
