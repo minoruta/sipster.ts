@@ -3,7 +3,7 @@
 This sipster.ts provides TypeScript wrapper library of [pjsip](http://www.pjsip.org) wrapped by [mscdex/sipster](https://github.com/mscdex/sipster) for nodejs.
 
 ## Documents
-- [sipster.ts](https://github.io/minoruta/sipster.ts)
+- [sipster.ts](https://minoruta.github.io/sipster.ts/)
 
 ## Test
 - `npm test`
