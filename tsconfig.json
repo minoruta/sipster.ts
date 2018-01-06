@@ -33,6 +33,6 @@
       "excludeExternals": false,
       "includeDeclarations": false,
       "hideGenerator": false,
-      "sourcefile-url-prefix": "https://github.com/minoruta/sipster.ts/src/"
+      "sourcefile-url-prefix": "https://github.com/minoruta/sipster.ts/blob/master/src/"
   }
 }
