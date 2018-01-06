@@ -25,3 +25,6 @@ before_install:
     - make dep all
     - sudo make install
     - sudo ldconfig
+install:
+  - npm install
+script: npm test
