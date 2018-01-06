@@ -1,4 +1,4 @@
-# sipster.ts - A wrapper of pjsip & mscdex/sipster
+# sipster.ts - A wrapper of pjsip & mscdex/sipster [![Build Status](https://travis-ci.org/minoruta/sipster.ts.svg?branch=master)](https://travis-ci.org/minoruta/sipster.ts)
 
 This sipster.ts provides TypeScript wrapper library of [pjsip](http://www.pjsip.org) wrapped by [mscdex/sipster](https://github.com/mscdex/sipster) for nodejs.
 
