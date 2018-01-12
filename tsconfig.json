@@ -30,7 +30,7 @@
       "includes": "src",
       "excludeNotExported": true,
       "excludePrivate": true,
-      "excludeExternals": false,
+      "excludeExternals": true,
       "includeDeclarations": false,
       "hideGenerator": false,
       "sourcefile-url-prefix": "https://github.com/minoruta/sipster.ts/blob/master/src/"
