@@ -7,6 +7,24 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const sipster = require("sipster");
 const events_1 = require("events");
+exports.DEFAULT_ACCOUNT_CONFIG = {
+    priority: 0,
+    regConfig: {
+        registerOnAdd: true,
+        contactParams: "",
+        timeoutSec: 300,
+        retryIntervalSec: 0,
+        firstRetryIntervalSec: 0,
+        randomRetryIntervalSec: 10,
+        delayBeforeRefreshSec: 5,
+        dropCallsOnFail: false,
+        unregWaitMsec: 4000,
+        proxyUse: 3,
+    },
+    sipConfig: {
+        transportId: -1
+    }
+};
 class Sipster {
     /**
      * @throws {Error}  the instance already exists

@@ -24,6 +24,15 @@ export interface TransportConfig {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountRegConfig.htm|RegConfig} */
 export interface RegConfig {
     registrarUri: string;
+    contactParams?: string;
+    timeoutSec?: number;
+    retryIntervalSec?: number;
+    firstRetryIntervalSec?: number;
+    randomRetryIntervalSec?: number;
+    delayBeforeRefreshSec?: number;
+    dropCallsOnFail?: boolean;
+    unregWaitMsec?: number;
+    proxyUse?: number;
 }
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpjsip__cred__info.htm|AuthCred} */
 export interface AuthCred {
@@ -36,13 +45,33 @@ export interface AuthCred {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountSipConfig.htm|SipConfig} */
 export interface SipConfig {
     authCreds: AuthCred[];
+    transportId?: number;
 }
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountConfig.htm|AccountConfig} */
 export interface AccountConfig {
+    priority?: number;
     idUri: string;
     regConfig?: RegConfig;
     sipConfig?: SipConfig;
 }
+export declare const DEFAULT_ACCOUNT_CONFIG: {
+    priority: number;
+    regConfig: {
+        registerOnAdd: boolean;
+        contactParams: string;
+        timeoutSec: number;
+        retryIntervalSec: number;
+        firstRetryIntervalSec: number;
+        randomRetryIntervalSec: number;
+        delayBeforeRefreshSec: number;
+        dropCallsOnFail: boolean;
+        unregWaitMsec: number;
+        proxyUse: number;
+    };
+    sipConfig: {
+        transportId: number;
+    };
+};
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/classpj_1_1Call.htm|Call} */
 export declare class Call extends EventEmitter {
     /** Detaches the Call from the event loop (default). */
