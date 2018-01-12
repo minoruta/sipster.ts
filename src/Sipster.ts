@@ -215,6 +215,8 @@ export declare class Account extends EventEmitter {
     unref(): void;
     /** Attaches the Account to the event loop (default upon instantiation). */
     ref(): void;
+    /** Reconfigure the Account with the given accountConfig. */
+    modify(config: AccountConfig): void;
     /** Returns information (AccountConfig) about the account */
     getInfo(): AccountInfo;
     /**
