@@ -1,4 +1,10 @@
 /// <reference types="node" />
+/**
+ * mscdex/sipster & PJSUA2 APIs
+ * @see {@link https://github.com/mscdex/sipster#api|mscdex/sipster API}
+ * @see {@link http://www.pjsip.org/docs/book-latest/html/intro_pjsua2.html|PJSUA2-High Level API}
+ */
+import * as sipster from 'sipster';
 import { EventEmitter } from 'events';
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1LogConfig.htm|LogConfig} */
 export interface LogConfig {
@@ -45,7 +51,7 @@ export interface AuthCred {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountSipConfig.htm|SipConfig} */
 export interface SipConfig {
     authCreds: AuthCred[];
-    transportId?: number;
+    transport?: sipster.Transport;
 }
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountConfig.htm|AccountConfig} */
 export interface AccountConfig {
@@ -67,9 +73,6 @@ export declare const DEFAULT_ACCOUNT_CONFIG: {
         dropCallsOnFail: boolean;
         unregWaitMsec: number;
         proxyUse: number;
-    };
-    sipConfig: {
-        transportId: number;
     };
 };
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/classpj_1_1Call.htm|Call} */

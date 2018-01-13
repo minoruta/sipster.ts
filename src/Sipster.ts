@@ -58,7 +58,7 @@ export interface AuthCred {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountSipConfig.htm|SipConfig} */
 export interface SipConfig {
     authCreds: AuthCred[];
-    transportId?: number;
+    transport?: sipster.Transport;
 }
 
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountConfig.htm|AccountConfig} */
@@ -82,9 +82,6 @@ export const DEFAULT_ACCOUNT_CONFIG = {
         dropCallsOnFail: false,
         unregWaitMsec: 4000,
         proxyUse: 3,
-    },
-    sipConfig: {
-        transportId: -1
     }
 };
 

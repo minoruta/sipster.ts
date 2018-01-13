@@ -20,9 +20,6 @@ exports.DEFAULT_ACCOUNT_CONFIG = {
         dropCallsOnFail: false,
         unregWaitMsec: 4000,
         proxyUse: 3,
-    },
-    sipConfig: {
-        transportId: -1
     }
 };
 class Sipster {
