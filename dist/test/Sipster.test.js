@@ -40,7 +40,7 @@ describe('sipster.ts', () => {
     });
     test('set up a SIP account, we need at least one', () => {
         // this sets up an account for calls coming from 192.168.100.10
-        account = new sipster.Account({ idUri: 'sip:192.168.100.10', transport: transport });
+        account = new sipster.Account({ idUri: 'sip:192.168.100.10' });
         expect(account.getInfo()).toMatchSnapshot();
         expect(account.valid).toMatchSnapshot();
         expect(account.default).toMatchSnapshot();
