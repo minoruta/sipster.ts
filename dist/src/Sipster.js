@@ -77,6 +77,9 @@ const DEFAULT_SIP_CONFIG = {
     authInitialEmpty: false,
     authInitialAlgorithm: "",
 };
+/**
+ * Complement the specified account config with default value.
+ */
 function makeAccountConfig(config) {
     if (config.regConfig) {
         const DEFAULT = DEFAULT_REG_CONFIG;

@@ -298,4 +298,7 @@ export declare class Sipster {
     createPlayer(filename: string, options?: number): AudioMediaPlayer;
     createRecorder(filename: string): AudioMediaRecorder;
 }
+/**
+ * Complement the specified account config with default value.
+ */
 export declare function makeAccountConfig(config: AccountConfig): AccountConfig;
