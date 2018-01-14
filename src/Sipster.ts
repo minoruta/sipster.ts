@@ -35,6 +35,7 @@ export interface TransportConfig {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountRegConfig.htm|RegConfig} */
 export interface RegConfig {
     registrarUri: string;
+    registerOnAdd?: boolean;
     contactParams?: string;
     timeoutSec?: number;
     retryIntervalSec?: number;
@@ -58,6 +59,12 @@ export interface AuthCred {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountSipConfig.htm|SipConfig} */
 export interface SipConfig {
     authCreds: AuthCred[];
+    proxies?: string[];
+    contactForced?: string;
+    contactParams?: string;
+    contactUriParams?: string;
+    authInitialEmpty?: boolean;
+    authInitialAlgorithm?: string;
     transport?: any; // sipster.Transport;
 }
 
@@ -68,22 +75,6 @@ export interface AccountConfig {
     regConfig?: RegConfig;
     sipConfig?: SipConfig;
 }
-
-export const DEFAULT_ACCOUNT_CONFIG = {
-    priority: 0,
-    regConfig: {
-        registerOnAdd: true,
-        contactParams: "",
-        timeoutSec: 300,
-        retryIntervalSec: 0,
-        firstRetryIntervalSec: 0,
-        randomRetryIntervalSec: 10,
-        delayBeforeRefreshSec: 5,
-        dropCallsOnFail: false,
-        unregWaitMsec: 4000,
-        proxyUse: 3,
-    }
-};
 
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/classpj_1_1Call.htm|Call} */
 export declare class Call extends EventEmitter {
@@ -375,4 +366,43 @@ export class Sipster {
     createRecorder(filename: string): AudioMediaRecorder {
         return sipster.createRecorder(filename);
     }
+}
+
+const DEFAULT_REG_CONFIG = {
+    registerOnAdd: true,
+    contactParams: "",
+    timeoutSec: 300,
+    retryIntervalSec: 0,
+    firstRetryIntervalSec: 0,
+    randomRetryIntervalSec: 10,
+    delayBeforeRefreshSec: 5,
+    dropCallsOnFail: false,
+    unregWaitMsec: 4000,
+    proxyUse: 3,
+};
+
+const DEFAULT_SIP_CONFIG = {
+    contactForced: "",
+    contactParams: "",
+    contactUriParams: "",
+    authInitialEmpty: false,
+    authInitialAlgorithm: "",
+};
+
+/**
+ * Complement the specified account config with default value.
+ */
+export function makeAccountConfig(config: AccountConfig): AccountConfig {
+
+    if (config.regConfig) {
+        const DEFAULT = DEFAULT_REG_CONFIG;
+        config.regConfig = Object.assign(DEFAULT, config.regConfig);
+    }
+
+    if (config.sipConfig) {
+        const DEFAULT = DEFAULT_SIP_CONFIG;
+        config.sipConfig = Object.assign(DEFAULT, config.sipConfig);
+    }
+
+    return config;
 }
