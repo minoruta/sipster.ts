@@ -23,6 +23,7 @@ before_install:
       --disable-sdl
       --disable-speex-aec
       --disable-video
+      > /dev/null
     - make dep all
     - sudo make install
     - sudo ldconfig
