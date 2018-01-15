@@ -87,7 +87,13 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#authcreds" class="tsd-kind-icon">auth<wbr>Creds</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#transportid" class="tsd-kind-icon">transport<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#authinitialalgorithm" class="tsd-kind-icon">auth<wbr>Initial<wbr>Algorithm</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#authinitialempty" class="tsd-kind-icon">auth<wbr>Initial<wbr>Empty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#contactforced" class="tsd-kind-icon">contact<wbr>Forced</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#contactparams" class="tsd-kind-icon">contact<wbr>Params</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#contacturiparams" class="tsd-kind-icon">contact<wbr>Uri<wbr>Params</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#proxies" class="tsd-kind-icon">proxies</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sipconfig.html#transport" class="tsd-kind-icon">transport</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,17 +107,77 @@
 					<div class="tsd-signature tsd-kind-icon">auth<wbr>Creds<span class="tsd-signature-symbol">:</span> <a href="authcred.html" class="tsd-signature-type">AuthCred</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L60">Sipster.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L61">Sipster.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="transportid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> transport<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">transport<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="authinitialalgorithm" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> auth<wbr>Initial<wbr>Algorithm</h3>
+					<div class="tsd-signature tsd-kind-icon">auth<wbr>Initial<wbr>Algorithm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L61">Sipster.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L67">Sipster.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="authinitialempty" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> auth<wbr>Initial<wbr>Empty</h3>
+					<div class="tsd-signature tsd-kind-icon">auth<wbr>Initial<wbr>Empty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L66">Sipster.ts:66</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="contactforced" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> contact<wbr>Forced</h3>
+					<div class="tsd-signature tsd-kind-icon">contact<wbr>Forced<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L63">Sipster.ts:63</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="contactparams" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> contact<wbr>Params</h3>
+					<div class="tsd-signature tsd-kind-icon">contact<wbr>Params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L64">Sipster.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="contacturiparams" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> contact<wbr>Uri<wbr>Params</h3>
+					<div class="tsd-signature tsd-kind-icon">contact<wbr>Uri<wbr>Params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L65">Sipster.ts:65</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="proxies" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> proxies</h3>
+					<div class="tsd-signature tsd-kind-icon">proxies<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L62">Sipster.ts:62</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="transport" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> transport</h3>
+					<div class="tsd-signature tsd-kind-icon">transport<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/minoruta/sipster.ts/blob/master/src/Sipster.ts#L68">Sipster.ts:68</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -181,7 +247,25 @@
 								<a href="sipconfig.html#authcreds" class="tsd-kind-icon">auth<wbr>Creds</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sipconfig.html#transportid" class="tsd-kind-icon">transport<wbr>Id</a>
+								<a href="sipconfig.html#authinitialalgorithm" class="tsd-kind-icon">auth<wbr>Initial<wbr>Algorithm</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sipconfig.html#authinitialempty" class="tsd-kind-icon">auth<wbr>Initial<wbr>Empty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sipconfig.html#contactforced" class="tsd-kind-icon">contact<wbr>Forced</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sipconfig.html#contactparams" class="tsd-kind-icon">contact<wbr>Params</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sipconfig.html#contacturiparams" class="tsd-kind-icon">contact<wbr>Uri<wbr>Params</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sipconfig.html#proxies" class="tsd-kind-icon">proxies</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="sipconfig.html#transport" class="tsd-kind-icon">transport</a>
 							</li>
 						</ul>
 					</li>
@@ -199,8 +283,8 @@
 					<li class=" tsd-kind-interface">
 						<a href="version.html" class="tsd-kind-icon">Version</a>
 					</li>
-					<li class=" tsd-kind-object-literal">
-						<a href="../index.html#default_account_config" class="tsd-kind-icon">DEFAULT_<wbr>ACCOUNT_<wbr>CONFIG</a>
+					<li class=" tsd-kind-function">
+						<a href="../index.html#makeaccountconfig" class="tsd-kind-icon">make<wbr>Account<wbr>Config</a>
 					</li>
 				</ul>
 			</nav>

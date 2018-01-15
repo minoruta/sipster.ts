@@ -7,24 +7,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const sipster = require("sipster");
 const events_1 = require("events");
-exports.DEFAULT_ACCOUNT_CONFIG = {
-    priority: 0,
-    regConfig: {
-        registerOnAdd: true,
-        contactParams: "",
-        timeoutSec: 300,
-        retryIntervalSec: 0,
-        firstRetryIntervalSec: 0,
-        randomRetryIntervalSec: 10,
-        delayBeforeRefreshSec: 5,
-        dropCallsOnFail: false,
-        unregWaitMsec: 4000,
-        proxyUse: 3,
-    },
-    sipConfig: {
-        transportId: -1
-    }
-};
 class Sipster {
     /**
      * @throws {Error}  the instance already exists
@@ -76,4 +58,38 @@ class Sipster {
     }
 }
 exports.Sipster = Sipster;
+const DEFAULT_REG_CONFIG = {
+    registerOnAdd: true,
+    contactParams: "",
+    timeoutSec: 300,
+    retryIntervalSec: 0,
+    firstRetryIntervalSec: 0,
+    randomRetryIntervalSec: 10,
+    delayBeforeRefreshSec: 5,
+    dropCallsOnFail: false,
+    unregWaitMsec: 4000,
+    proxyUse: 3,
+};
+const DEFAULT_SIP_CONFIG = {
+    contactForced: "",
+    contactParams: "",
+    contactUriParams: "",
+    authInitialEmpty: false,
+    authInitialAlgorithm: "",
+};
+/**
+ * Complement the specified account config with default value.
+ */
+function makeAccountConfig(config) {
+    if (config.regConfig) {
+        const DEFAULT = DEFAULT_REG_CONFIG;
+        config.regConfig = Object.assign(DEFAULT, config.regConfig);
+    }
+    if (config.sipConfig) {
+        const DEFAULT = DEFAULT_SIP_CONFIG;
+        config.sipConfig = Object.assign(DEFAULT, config.sipConfig);
+    }
+    return config;
+}
+exports.makeAccountConfig = makeAccountConfig;
 //# sourceMappingURL=Sipster.js.map

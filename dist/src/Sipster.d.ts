@@ -24,6 +24,7 @@ export interface TransportConfig {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountRegConfig.htm|RegConfig} */
 export interface RegConfig {
     registrarUri: string;
+    registerOnAdd?: boolean;
     contactParams?: string;
     timeoutSec?: number;
     retryIntervalSec?: number;
@@ -45,7 +46,13 @@ export interface AuthCred {
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountSipConfig.htm|SipConfig} */
 export interface SipConfig {
     authCreds: AuthCred[];
-    transportId?: number;
+    proxies?: string[];
+    contactForced?: string;
+    contactParams?: string;
+    contactUriParams?: string;
+    authInitialEmpty?: boolean;
+    authInitialAlgorithm?: string;
+    transport?: any;
 }
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/structpj_1_1AccountConfig.htm|AccountConfig} */
 export interface AccountConfig {
@@ -54,24 +61,6 @@ export interface AccountConfig {
     regConfig?: RegConfig;
     sipConfig?: SipConfig;
 }
-export declare const DEFAULT_ACCOUNT_CONFIG: {
-    priority: number;
-    regConfig: {
-        registerOnAdd: boolean;
-        contactParams: string;
-        timeoutSec: number;
-        retryIntervalSec: number;
-        firstRetryIntervalSec: number;
-        randomRetryIntervalSec: number;
-        delayBeforeRefreshSec: number;
-        dropCallsOnFail: boolean;
-        unregWaitMsec: number;
-        proxyUse: number;
-    };
-    sipConfig: {
-        transportId: number;
-    };
-};
 /** @see {@link http://www.pjsip.org/pjsip/docs/html/classpj_1_1Call.htm|Call} */
 export declare class Call extends EventEmitter {
     /** Detaches the Call from the event loop (default). */
@@ -309,3 +298,7 @@ export declare class Sipster {
     createPlayer(filename: string, options?: number): AudioMediaPlayer;
     createRecorder(filename: string): AudioMediaRecorder;
 }
+/**
+ * Complement the specified account config with default value.
+ */
+export declare function makeAccountConfig(config: AccountConfig): AccountConfig;
