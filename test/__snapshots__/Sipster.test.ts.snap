@@ -15,11 +15,11 @@ exports[`sipster.ts create a Sipster 1`] = `
 Object {
   "EpConfig": Object {
     "LogConfig": Object {
-      "consoleLevel": 6,
+      "consoleLevel": 3,
       "decor": 25328,
       "fileFlags": 0,
       "filename": "",
-      "level": 6,
+      "level": 3,
       "msgLogging": 1,
     },
     "MediaConfig": Object {

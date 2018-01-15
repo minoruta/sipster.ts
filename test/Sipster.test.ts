@@ -37,7 +37,7 @@ describe('sipster.ts', () => {
         expect(Sipster.version).toMatchSnapshot();
     });
     test ('create a Sipster', () => {
-        const configs = { logConfig: { level: 6, consoleLevel: 6 }};
+        const configs = { logConfig: { level: 3, consoleLevel: 3 }};
         sipster = Sipster.instance(configs);
         expect(Sipster.instance()).toBe(sipster);
         expect(sipster.config).toMatchSnapshot();
