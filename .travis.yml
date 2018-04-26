@@ -17,6 +17,7 @@ addons:
       - gcc-4.9
       - g++-4.9
 before_install:
+    - ls -l /usr/bin
     - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; fi
     - wget -nv "http://www.pjsip.org/release/$VERSION_PJSIP/pjproject-$VERSION_PJSIP.tar.bz2" -O - | tar xjf -
     - cd pjproject-$VERSION_PJSIP
