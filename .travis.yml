@@ -28,5 +28,6 @@ before_install:
     - sudo make install
     - sudo ldconfig
 install:
+  - gcc --version
   - npm install
 script: npm test
