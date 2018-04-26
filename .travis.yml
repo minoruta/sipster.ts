@@ -18,7 +18,6 @@ addons:
       - g++-4.9
 before_install:
     - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
-    - ls -l /usr/bin/g*
     - wget -nv "http://www.pjsip.org/release/$VERSION_PJSIP/pjproject-$VERSION_PJSIP.tar.bz2" -O - | tar xjf -
     - cd pjproject-$VERSION_PJSIP
     - >
@@ -34,6 +33,7 @@ before_install:
     - sudo make install
     - sudo ldconfig
 install:
+  - export CXX="g++-4.9" CC="gcc-4.9"
   - gcc --version
   - npm install
 script: npm test
