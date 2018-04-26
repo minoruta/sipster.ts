@@ -14,6 +14,7 @@ addons:
       - pkg-config
       - build-essential
       - python
+      - gcc-4.9
       - g++-4.9
 before_install:
     - wget -nv "http://www.pjsip.org/release/$VERSION_PJSIP/pjproject-$VERSION_PJSIP.tar.bz2" -O - | tar xjf -
