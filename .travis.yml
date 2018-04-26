@@ -7,11 +7,14 @@ env:
   - VERSION_PJSIP=2.7.1
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
-    - wget
-    - pkg-config
-    - build-essential
-    - python
+      - wget
+      - pkg-config
+      - build-essential
+      - python
+      - g++-4.9
 before_install:
     - wget -nv "http://www.pjsip.org/release/$VERSION_PJSIP/pjproject-$VERSION_PJSIP.tar.bz2" -O - | tar xjf -
     - cd pjproject-$VERSION_PJSIP
