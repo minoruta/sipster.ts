@@ -2,11 +2,11 @@
 
 exports[`sipster.ts check static properties 1`] = `
 Object {
-  "full": "2.7.1",
+  "full": "2.7.2",
   "major": 2,
   "minor": 7,
-  "numeric": 34013440,
-  "rev": 1,
+  "numeric": 34013696,
+  "rev": 2,
   "suffix": "",
 }
 `;
