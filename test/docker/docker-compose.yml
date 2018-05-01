@@ -1,0 +1,6 @@
+version: '3'
+services:
+  sipster:
+    build: .
+    volumes:
+      - ../../:/root/sipster.ts/
