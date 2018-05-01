@@ -4,7 +4,7 @@ node_js:
   - "node"
   - "lts/*"
 env:
-  - VERSION_PJSIP=2.7.1
+  - VERSION_PJSIP=2.7.2 VERSION_LIBSRTP=2.1.0
 addons:
   apt:
     sources:
@@ -16,12 +16,22 @@ addons:
       - python
       - gcc-4.9
       - g++-4.9
+      - gdb
 before_install:
     - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
+    - wget https://github.com/cisco/libsrtp/archive/v$VERSION_LIBSRTP.tar.gz
+    - tar xzf v$VERSION_LIBSRTP.tar.gz
+    - cd libsrtp-$VERSION_LIBSRTP
+    - ./configure
+    - make
+    - sudo make install
+    - sudo ldconfig
+    - cd ..
     - wget -nv "http://www.pjsip.org/release/$VERSION_PJSIP/pjproject-$VERSION_PJSIP.tar.bz2" -O - | tar xjf -
     - cd pjproject-$VERSION_PJSIP
     - >
       ./configure
+      --with-external-srtp
       --enable-shared
       --disable-sound
       --disable-oss
@@ -32,8 +42,14 @@ before_install:
     - make dep all
     - sudo make install
     - sudo ldconfig
+    - cd ..
 install:
   - export CXX="g++-4.9" CC="gcc-4.9"
   - gcc --version
   - npm install
+before_script:
+  - ulimit -c unlimited
 script: npm test
+after_failure:
+  - NODEJS=$(which node)
+  - gdb -c ./core "$NODEJS" -ex "thread apply all bt" -ex "set pagination 0" -batch
